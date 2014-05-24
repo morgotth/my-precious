@@ -22,7 +22,6 @@ HISTFILE=~/.zsh_history
 ## Prompt theme ##
 ##              ##
 
-
 # Disable part for oh-my-zsh prompt
 # DISABLE_OH_MY_ZSH=1
 if [ -n "$DISABLE_OH_MY_ZSH" ];then
@@ -35,6 +34,9 @@ prompt oliver
 # custom promt with root/user color
 # display last return code ne 0
 # example: 11:09 morgotth@yuno ~ 127 $
+# Notes:
+# %c current directory   # %~ for full current path
+# %n current user        # %m hostname
 if [ $(id -u) -eq 0 ]; then
   export PS1="$(print '%{\e[36;1m%}%T %{\e[31m%}%n%{\e[33m%}@%{\e[37m%}%m %{\e[32m%}%~ %{\e[33m%}$(_ret=$?;if [ $_ret -ne 0 ];then print "$_ret ";fi)%{\e[0m%}\$') "
 else
