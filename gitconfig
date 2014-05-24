@@ -1,0 +1,32 @@
+[user]
+	name = morgotth
+	email = morgotth0@gmail.com
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 962x807+1600+0
+	main-window-view = HistoryView
+	history-view-vpane-position = 181
+	file-view-vpane-position = 658
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+[core]
+	editor = vim
+	excludesfile = /Users/morgotth/.gitignore_global
+[alias]
+	st = status -s
+	cm = commit
+
+	# lg -p for changed lines, see https://coderwall.com/p/euwpig
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
+	logc = log --color --decorate --graph
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple

@@ -1,0 +1,119 @@
+
+##
+## FUNCTIONS
+##
+
+function ping_with_date {
+    local addr='8.8.8.8'
+    if [ ! -z $@ ];then addr="$@";fi
+    ping $addr | while read x;do echo "$(date +"%H:%M:%S"): $x";done
+}
+
+function extract {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1        ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       rar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xf $1        ;;
+            *.tbz2)      tar xjf $1      ;;
+            *.tgz)       tar xzf $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+function cleanpyc {
+    find . -name '*.pyc' -delete
+}
+
+function android_take_picture {
+    if [ -z $1 ];then
+        echo "Missing destination path" >&2 
+        return
+    fi
+    if [ $(adb devices | grep device | wc -l) -lt 2 ];then
+        echo "Device not found" >&2
+        return
+    fi
+    adb shell /system/bin/screencap -p /sdcard/screenshot.png
+    adb pull /sdcard/screenshot.png "$1"
+    adb shell "rm /sdcard/screenshot.png"
+}
+
+# &> redirect all output
+function command_exists {
+    type "$1" &> /dev/null ;
+}
+function source_if_exists {
+    [ -z $2 ] && 2=$1
+    command_exists $1 && source $2
+}
+function exec_if_exists {
+    [ -z $2 ] && 2=$1
+    command_exists $1 && $2
+}
+
+
+##
+## GENERAL
+##
+
+export EDITOR="/usr/bin/vim"
+export LESS_TERMCAP_mb=$'\E[01;31m'    # debut de blink !
+export LESS_TERMCAP_md=$'\E[01;31m'    # debut de gras
+export LESS_TERMCAP_me=$'\E[0m'        # fin
+export LESS_TERMCAP_so=$'\E[01;44;33m' # début de la ligne d'état
+export LESS_TERMCAP_se=$'\E[0m'        # fin
+export LESS_TERMCAP_us=$'\E[01;32m'    # début de souligné
+export LESS_TERMCAP_ue=$'\E[0m'        # fin
+
+# ls aliases
+if [ $(uname) = Darwin ]
+then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
+alias l='ls -C'
+alias la='ls -A'
+alias ll='ls -lh'
+alias lll='ls -lh | less'
+
+alias grep='grep --color=auto'
+
+##
+## PATH
+##
+
+export PATH=$PATH:$HOME/.rvm/bin:$HOME/bin
+export PYTHONSTARTUP=~/.pythonrc
+# if adb is available, require bash completion
+command_exists adb && [ -e $HOME/.adb ] && source $HOME/.adb
+[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+##
+## specific host conf
+##
+
+source_if_exists "$HOME/.my/${HOST}.sh"
+
+##
+## INFOS OUTPUT
+##
+
+m_nl() { printf "\n     ~~~~~~~~~~~~~~~~~~~~~~\n\n"; }
+esp() { printf "+ "; }
+
+echo "     ~~~~~~~~ Welcome to $HOST :3 ~~~~~~~~"
+#df -h | nl | sort -k 2 | uniq -f 1 | sort -n | cut -f 2-
+esp
+uname -a
+
