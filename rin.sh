@@ -3,6 +3,8 @@
 ## Rin is a 2012 macbook pro
 ##
 
+echo "Rin configuration ..."
+
 ## VARS
 
 # pip cache
@@ -12,7 +14,7 @@ export PIP_DOWNLOAD_CACHE='/var/tmp/pip-cache';
 
 alias nvlc='/Applications/VLC.app/Contents/MacOS/VLC -I "curses" --browse-dir=~/Music'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias python3=ipython3 # IPYTHON POWER !!
+alias j='autojump'
 
 ## PATH
 
