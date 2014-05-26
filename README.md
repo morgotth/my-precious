@@ -10,6 +10,7 @@ git clone https://github.com/morgotth/my-precious/ ~/.my
 ~/.my/init
 ```
 
-Dependencies :
+# Dependencies #
 
-- Install oh-my-zsh for zsh
+- Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and add in default zshrc:
+
