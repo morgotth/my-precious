@@ -1,13 +1,38 @@
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
-export PATH="$HOME/.rvm/bin:$HOME/bin:/usr/local/share/npm/bin:$PATH"
+##
+## oh-my-zsh part
+##
 
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+plugins=(git autoenv battery brew brew-cask cp django golang fabric osx pip postgres python virtualenv virtualenvwrapper autojump)
+# autoenv: automaticly execs script on changing dir (.env file)
+# cp: cp with progression "cpv"
+
+source $ZSH/oh-my-zsh.sh
 
 ##         ##
 ## General ##
 ##         ##
 
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+export PATH="$HOME/.rvm/bin:$HOME/bin:/usr/local/share/npm/bin:$PATH"
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e

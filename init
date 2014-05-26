@@ -2,9 +2,8 @@ echo ">> Init/update git submodule(s)"
 git submodule init
 git submodule update
 
-exports=(adb bashrc emacs gitconfig irssi pythonrc rin.sh vim vimrc)
-echo ">> Link ${#exports} elements."
+exports=(adb bashrc emacs gitconfig irssi pythonrc rin.sh vim vimrc zshrc)
+echo ">> Link ${#exports[*]} elements."
 for i in ${exports[*]};do
-    echo $i && ln -s "$HOME/.my/$i" "$HOME/.$i"
+    [ ! -e "$HOME/.$i" ] && ln -s "$HOME/.my/$i" "$HOME/.$i" || echo "$HOME/.$i already exists." 2>&1
 done
-
