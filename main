@@ -103,7 +103,7 @@ command_exists adb && [ -e $HOME/.adb ] && source $HOME/.adb
 ## specific host conf
 ##
 
-source_if_exists "$HOME/.my/${HOST}.sh"
+source "$HOME/.my/${HOST}.sh"
 
 ##
 ## INFOS OUTPUT
