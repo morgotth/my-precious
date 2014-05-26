@@ -14,7 +14,6 @@ export PIP_DOWNLOAD_CACHE='/var/tmp/pip-cache';
 
 alias nvlc='/Applications/VLC.app/Contents/MacOS/VLC -I "curses" --browse-dir=~/Music'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias j='autojump'
 
 ## PATH
 
