@@ -12,5 +12,6 @@ git clone https://github.com/morgotth/my-precious/ ~/.my
 
 # Dependencies #
 
-- Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and add in default zshrc:
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [autojump](https://github.com/joelthelion/autojump)
 
