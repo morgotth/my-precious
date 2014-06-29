@@ -10,6 +10,10 @@ echo "Rin configuration ..."
 # pip cache
 export PIP_DOWNLOAD_CACHE='/var/tmp/pip-cache';
 
+# fix encoding annoyances with less. See configuration with "locale" command.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 ## ALIAS
 
 alias nvlc='/Applications/VLC.app/Contents/MacOS/VLC -I "curses" --browse-dir=~/Music'
