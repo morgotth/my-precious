@@ -22,6 +22,13 @@
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
 	logc = log --color --decorate --graph
+
+    # serve for read only
+    serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+    # hub for read-write 
+    hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+    # used with git clone http://localhost:1234/
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -30,3 +37,5 @@
 	trustExitCode = true
 [push]
 	default = simple
+[merge]
+	tool = vimdiff
