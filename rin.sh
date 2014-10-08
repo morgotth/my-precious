@@ -1,18 +1,11 @@
-
 ##
 ## Rin is a 2012 macbook pro
 ##
 
 echo "Rin configuration ..."
 
-## VARS
-
-# pip cache
-export PIP_DOWNLOAD_CACHE='/var/tmp/pip-cache';
-
-# fix encoding annoyances with less. See configuration with "locale" command.
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+## Global mac configuration
+source $HOME/.my/_osx.sh
 
 ## ALIAS
 
@@ -53,10 +46,5 @@ function synchronise_itunes_music {
 	else
 		echo "Invalid INPUT $INPUT"
 	fi
-}
-
-function bup {
-    # Burp !!
-    brew update && brew upgrade
 }
 
