@@ -17,7 +17,7 @@ brew install caskroom/cask/brew-cask
 
 brew cask doctor
 brew cask install vlc android-file-transfer dropbox mplayerx vlc skype alfred iterm2 spotify
-brew cask electrum libreoffice gimp virtualbox
+brew cask install electrum libreoffice gimp virtualbox cyberduck google-chrome the-unarchiver tunnelblick
 # android-studio-bundle: android-studio + sdk
 brew cask install android-studio-bundle genymotion
 
