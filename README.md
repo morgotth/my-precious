@@ -15,7 +15,7 @@ brew doctor
 brew install android-sdk cmake ffmpeg gcc git go irssi latex2rtf mkvtoolnix ncdu scala tmux tree wget
 brew install caskroom/cask/brew-cask
 brew cask doctor
-brew cask install libreoffice vlc android-file-transfer atom dropbox electrum genymotion gimp mplayerx vlc skype
+brew cask install libreoffice vlc android-file-transfer atom dropbox electrum genymotion gimp mplayerx vlc skype alfred
 
 # my-precious install
 git clone https://github.com/morgotth/my-precious/ ~/.my
