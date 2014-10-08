@@ -14,9 +14,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 brew install cmake ffmpeg gcc git go irssi latex2rtf mkvtoolnix ncdu scala tmux tree wget
 brew install caskroom/cask/brew-cask
+
 brew cask doctor
-brew cask install libreoffice vlc android-file-transfer atom dropbox electrum genymotion gimp mplayerx vlc skype alfred
-# brew cask install android-studio
+brew cask install vlc android-file-transfer dropbox mplayerx vlc skype alfred iterm2 spotify
+brew cask electrum libreoffice gimp virtualbox
+# android-studio-bundle: android-studio + sdk
+brew cask install android-studio-bundle genymotion
 
 # my-precious install
 git clone https://github.com/morgotth/my-precious/ ~/.my
