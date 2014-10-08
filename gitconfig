@@ -1,5 +1,5 @@
 [user]
-	name = morgotth
+	name = Morgotth
 	email = morgotth0@gmail.com
 [giggle]
 	main-window-maximized = false
@@ -17,11 +17,14 @@
 	excludesfile = /Users/morgotth/.gitignore_global
 [alias]
 	st = status -s
-	cm = commit
+	ci = commit
+	br = branch
+	co = checkout
+	sth = stash
 
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
-	logc = log --color --decorate --graph
+	lgc = log -M --decorate --graph --oneline
 
     # serve for read only
     serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
