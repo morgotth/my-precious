@@ -2,11 +2,6 @@
 ## Common OSX configuration part
 ##
 
-# Installation commands :
-# brew install android-sdk cmake ffmpeg gcc git go irssi latex2rtf mkvtoolnix ncdu scala tmux tree wget
-# brew install caskroom/cask/brew-cask
-# brew cask install libreoffice vlc android-file-transfer atom dropbox electrum genymotion gimp mplayerx vlc
-
 ## VARS
 
 export PIP_DOWNLOAD_CACHE='/var/tmp/pip-cache';
