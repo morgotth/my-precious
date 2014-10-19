@@ -15,7 +15,8 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 ## PATH
 
 # homebrew
-export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_NDK=/usr/local/opt/android-ndk
 export PATH="/usr/local/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH"
 
 # GHC cabal packages path
