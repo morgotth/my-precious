@@ -21,6 +21,7 @@
 	br = branch
 	co = checkout
 	sth = stash
+    pr = pull --rebase
 
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
@@ -42,3 +43,5 @@
 	default = simple
 [merge]
 	tool = vimdiff
+[pull]
+	rebase = true
