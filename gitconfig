@@ -21,7 +21,7 @@
 	br = branch
 	co = checkout
 	sth = stash
-    pr = pull --rebase
+    pr = pull --rebase=preserve
 
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
@@ -44,4 +44,6 @@
 [merge]
 	tool = vimdiff
 [pull]
-	rebase = true
+    # Preserve to keep local merges
+    # See http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/#le-cas%20%C3%A9pineux%20du%20pull%20qui%20rebase%20un%20merge%20local
+	rebase = preserve

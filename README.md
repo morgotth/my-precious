@@ -12,7 +12,7 @@ curl -L http://install.ohmyz.sh | sh
 ## OSX commands
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
-brew install coreutils findutils autojump cmake ffmpeg gcc git go irssi latex2rtf mkvtoolnix ncdu scala tmux tree wget htop rename
+brew install coreutils findutils autojump cmake ffmpeg gcc git go irssi latex2rtf mkvtoolnix ncdu scala tmux tree wget htop rename git-flow
 brew install caskroom/cask/brew-cask
 
 brew cask doctor
