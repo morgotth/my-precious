@@ -20,6 +20,7 @@
 	ci = commit
 	br = branch
 	co = checkout
+	sh = show
 	sth = stash
     pr = pull --rebase=preserve
 
