@@ -52,9 +52,14 @@ function android_take_picture {
 function command_exists {
     type "$1" &> /dev/null ;
 }
+
 function source_if_exists {
+    # Usage: source_if_exists script.sh
+    # Usage: source_if_exists condition.file script.sh
+    
     [ -z $2 ] && 2=$1
-    command_exists $1 && source $2
+    # Test if file or symbolic link exists
+    [ -e $1 ] || [ -L $1 ] && source $2
 }
 function exec_if_exists {
     [ -z $2 ] && 2=$1
@@ -97,7 +102,7 @@ export PATH=$PATH:$HOME/.rvm/bin:$HOME/bin
 export PYTHONSTARTUP=~/.pythonrc
 # if adb is available, require bash completion
 command_exists adb && [ -e $HOME/.adb ] && source $HOME/.adb
-[ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
+source_if_exists /usr/local/bin/virtualenvwrapper_lazy.sh
 
 ##
 ## specific host conf

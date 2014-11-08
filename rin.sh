@@ -23,7 +23,7 @@ export PATH="/usr/local/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH"
 export PATH=$HOME/Library/Haskell/bin:$PATH
 
 # rvm (from http://portertech.ca/2010/03/26/homebrew--rvm--awesome/)
-source $HOME/.rvm/scripts/rvm
+source_if_exists $HOME/.rvm/scripts/rvm
 
 
 ##
