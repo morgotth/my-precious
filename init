@@ -1,18 +1,25 @@
-cd $HOME/.my/
+#!/usr/bin/env bash
+
+SCRIPT_PATH=${0%/*}
 
 echo ">> Init/update git submodule(s)"
+cd "$SCRIPT_PATH"
 git submodule init
 git submodule update
+cd - > /dev/null
 
-exports=(adb bashrc emacs gitconfig irssi pythonrc rin.sh vim vimrc zshrc)
+exports=(bashrc emacs gitconfig irssi pythonrc rin.sh vim vimrc zshrc)
 echo ">> Link ${#exports[*]} elements."
 for i in ${exports[*]};do
-    target="$HOME/.$i"
+    abspath="$SCRIPT_PATH/$i"
+    target="$HOME/.${i##*/}"
+
     if [ -e "$target" ];then
         echo "Moving $target to /tmp/"
         mv "$target" /tmp/
     fi
-    ln -s "$HOME/.my/$i" "$target"
+
+    echo "$abspath -> $target"
+    ln -s "abspath" "$target"
 done
 
-cd - > /dev/null
