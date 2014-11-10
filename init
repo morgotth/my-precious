@@ -7,9 +7,9 @@ echo ">> Init/update git submodule(s)"
 git submodule init
 git submodule update
 
-echo ">> Export dotfiles"
+echo ">> Export dotfiles from $PWD"
 for i in export/*;do
-    abspath="$SCRIPT_PATH/$i"
+    abspath="$PWD/$i"
     target="$HOME/.${i##*/}"
 
     if [ -e "$target" ] || [ -L "$target" ];then
