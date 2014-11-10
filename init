@@ -8,13 +8,15 @@ git submodule init
 git submodule update
 
 echo ">> Export dotfiles from $PWD"
+prefix=$(date +%s)
 for i in export/*;do
     abspath="$PWD/$i"
     target="$HOME/.${i##*/}"
 
     if [ -e "$target" ] || [ -L "$target" ];then
-        echo "Moving $target to /tmp/"
-        mv "$target" /tmp/
+        backup=/tmp/"$prefix-${i##*/}"
+        echo "Moving $target to $backup"
+        mv "$target" "$backup"
     fi
 
     echo "$abspath -> $target"
