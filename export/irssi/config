@@ -18,7 +18,7 @@ chatnets = {
 channels = (
   { name = "#touhou-france"; chatnet = "nanami"; autojoin = "Yes"; },
   { name = "#editotaku"; chatnet = "nanami"; autojoin = "Yes"; },
-  { name = "#vocaloid"; chatnet = "nanami"; autojoin = "Yes"; }
+  { name = "#vocaloid"; chatnet = "nanami"; autojoin = "Yes"; },
   { name = "#android-fr"; chatnet = "freenode"; autojoin = "Yes"; }
 );
 

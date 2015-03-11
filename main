@@ -43,9 +43,9 @@ function android_take_picture {
         echo "Device not found" >&2
         return
     fi
-    adb shell /system/bin/screencap -p /sdcard/screenshot.png
-    adb pull /sdcard/screenshot.png "$1"
-    adb shell "rm /sdcard/screenshot.png"
+    adb -d shell /system/bin/screencap -p /sdcard/screenshot.png
+    adb -d pull /sdcard/screenshot.png "$1"
+    adb -d shell "rm /sdcard/screenshot.png"
 }
 
 # &> redirect all output
@@ -93,6 +93,9 @@ alias ll='ls -lh'
 alias lll='ls -lh | less'
 
 alias grep='grep --color=auto'
+
+alias gt='git'
+alias gst='git st'
 
 ##
 ## PATH

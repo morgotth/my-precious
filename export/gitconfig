@@ -27,6 +27,7 @@
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen(%cr) ' --abbrev-commit
 	lg = log -M --decorate --graph --oneline
+	lgs = log -M --decorate --graph --oneline --stat
 
     # serve for read only
     serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
