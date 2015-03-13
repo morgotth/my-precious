@@ -17,7 +17,7 @@ brew install caskroom/cask/brew-cask
 
 brew cask doctor
 brew cask install vlc android-file-transfer dropbox mplayerx vlc skype alfred iterm2 spotify
-brew cask install electrum libreoffice virtualbox cyberduck google-chrome the-unarchiver tunnelblick
+brew cask install electrum libreoffice virtualbox cyberduck chromium the-unarchiver tunnelblick
 brew cask install qlmarkdown flash
 # alternative versions
 brew tap caskroom/versions
