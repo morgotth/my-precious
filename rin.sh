@@ -18,6 +18,7 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_NDK=/usr/local/opt/android-ndk
 export PATH="/usr/local/bin:/usr/local/share/npm/bin:/usr/local/sbin:$PATH"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # GHC cabal packages path
 export PATH=$HOME/Library/Haskell/bin:$PATH
