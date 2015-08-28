@@ -49,4 +49,3 @@ function synchronise_itunes_music {
 		echo "Invalid INPUT $INPUT"
 	fi
 }
-

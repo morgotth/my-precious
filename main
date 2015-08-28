@@ -61,9 +61,26 @@ function source_if_exists {
     # Test if file or symbolic link exists
     [ -e $1 ] || [ -L $1 ] && source $2
 }
+
 function exec_if_exists {
     [ -z $2 ] && 2=$1
     command_exists $1 && $2
+}
+
+function icons8 {
+    local icon="$1"
+    local target="$2"
+
+    if [ -f "$icon" ] && [ -d "$target" ]; then
+        cp "$icon" "cp-$icon" && sips -Z 32x32 "cp-$icon" > /dev/null && mv "cp-$icon" "$target/drawable-mdpi/$icon"
+        cp "$icon" "cp-$icon" && sips -Z 48x48 "cp-$icon" > /dev/null && mv "cp-$icon" "$target/drawable-hdpi/$icon"
+        cp "$icon" "cp-$icon" && sips -Z 64x64 "cp-$icon" > /dev/null && mv "cp-$icon" "$target/drawable-xhdpi/$icon"
+        cp "$icon" "cp-$icon" && sips -Z 96x96 "cp-$icon" > /dev/null && mv "cp-$icon" "$target/drawable-xxhdpi/$icon"
+    else
+        echo 'Usage: icons8 ic_machin.png app/src/main/res'
+        echo 'Description: downscale an icon (32dp) into res/{m,h,xh,xxh}dpi folders'
+        echo 'Please provide at least a 96px asset'
+    fi
 }
 
 
