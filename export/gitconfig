@@ -23,6 +23,8 @@
 	sh = show
 	sth = stash
 	pr = pull --rebase=preserve
+	df = diff --word-diff
+	ri = rebase -i --preserve-merges
 
 	# lg -p for changed lines, see https://coderwall.com/p/euwpig
 	l = log -M --decorate --graph --oneline
