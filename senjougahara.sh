@@ -8,8 +8,9 @@ echo "Senjougahara configuration ..."
 source $HOME/.my/_osx.sh
 
 # Android stuff
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk-bundle"
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 
 # added by travis gem
 [ -f /Users/morgotth/.travis/travis.sh ] && source /Users/morgotth/.travis/travis.sh
